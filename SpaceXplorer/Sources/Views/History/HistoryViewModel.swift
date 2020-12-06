@@ -18,11 +18,10 @@ class HistoryViewModel: ObservableObject {
     }
     
     private func fetchHistories() {
-        print("FETCH HISTORIES")
-        Network.shared.apollo.fetch(query: SpaceXHistoryQuery()) { queryResult in
-            switch queryResult {
-            case .success(let result):
-                if let historiesResult = result.data?.histories {
+        Network.shared.apollo.fetch(query: SpaceXHistoryQuery()) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let historiesResult = graphQLResult.data?.histories {
                     self.histories = self.cleanedHistories(historiesResult)
                 }
             case .failure(let error):
