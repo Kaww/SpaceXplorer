@@ -6,3 +6,10 @@ query SpaceXHistory {
     event_date_unix
   }
 }
+
+subscription SpaceXUsers {
+  users {
+    id
+    name
+  }
+}

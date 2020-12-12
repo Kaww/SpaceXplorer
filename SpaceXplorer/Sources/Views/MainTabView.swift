@@ -12,19 +12,6 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            LaunchesView()
-                .tabItem {
-                    Image(systemName: "flame.fill")
-                    Text("Launches")
-                }
-                .tag(0)
-            
-            UsersView()
-                .tabItem {
-                    Image(systemName: "person.3.fill")
-                    Text("Users")
-                }
-            
             HistoryView()
                 .tabItem {
                     Image(systemName: "calendar")

@@ -10,8 +10,6 @@
 		590D6823257D3A830084D9DB /* String+dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D6822257D3A830084D9DB /* String+dates.swift */; };
 		590D6826257D3D7F0084D9DB /* String+preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D6825257D3D7F0084D9DB /* String+preview.swift */; };
 		5935E7BB257C18EC00CAC5DC /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935E7BA257C18EC00CAC5DC /* HistoryDetailView.swift */; };
-		5935E7C1257CF91C00CAC5DC /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935E7C0257CF91C00CAC5DC /* UsersView.swift */; };
-		5935E7C3257CF95C00CAC5DC /* LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935E7C2257CF95C00CAC5DC /* LaunchesView.swift */; };
 		5935E7C6257CFE8C00CAC5DC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5935E7C5257CFE8C00CAC5DC /* README.md */; };
 		59667896257BFF890053F6A7 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59667895257BFF890053F6A7 /* HistoryView.swift */; };
 		5966789A257C08310053F6A7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59667899257C08310053F6A7 /* Network.swift */; };
@@ -47,8 +45,6 @@
 		590D6822257D3A830084D9DB /* String+dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+dates.swift"; sourceTree = "<group>"; };
 		590D6825257D3D7F0084D9DB /* String+preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+preview.swift"; sourceTree = "<group>"; };
 		5935E7BA257C18EC00CAC5DC /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
-		5935E7C0257CF91C00CAC5DC /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
-		5935E7C2257CF95C00CAC5DC /* LaunchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesView.swift; sourceTree = "<group>"; };
 		5935E7C5257CFE8C00CAC5DC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		59667895257BFF890053F6A7 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		59667899257C08310053F6A7 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -126,14 +122,6 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		5935E7BD257CF74C00CAC5DC /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				5935E7C0257CF91C00CAC5DC /* UsersView.swift */,
-			);
-			path = Users;
-			sourceTree = "<group>";
-		};
 		5935E7BE257CF7FB00CAC5DC /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,14 +129,6 @@
 				59A1030E257BFBB400AAC946 /* SpaceXplorerApp.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		5935E7BF257CF8E200CAC5DC /* Launches */ = {
-			isa = PBXGroup;
-			children = (
-				5935E7C2257CF95C00CAC5DC /* LaunchesView.swift */,
-			);
-			path = Launches;
 			sourceTree = "<group>";
 		};
 		59667898257C08210053F6A7 /* Apollo */ = {
@@ -172,8 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				59A10310257BFBB400AAC946 /* MainTabView.swift */,
-				5935E7BF257CF8E200CAC5DC /* Launches */,
-				5935E7BD257CF74C00CAC5DC /* Users */,
 				5935E7BC257CF5A300CAC5DC /* History */,
 			);
 			path = Views;
@@ -324,12 +302,10 @@
 				59A10311257BFBB400AAC946 /* MainTabView.swift in Sources */,
 				59667896257BFF890053F6A7 /* HistoryView.swift in Sources */,
 				5966789A257C08310053F6A7 /* Network.swift in Sources */,
-				5935E7C3257CF95C00CAC5DC /* LaunchesView.swift in Sources */,
 				590D6826257D3D7F0084D9DB /* String+preview.swift in Sources */,
 				59A1030F257BFBB400AAC946 /* SpaceXplorerApp.swift in Sources */,
 				5935E7BB257C18EC00CAC5DC /* HistoryDetailView.swift in Sources */,
 				5984B96B257D340F0041F928 /* HistoryViewModel.swift in Sources */,
-				5935E7C1257CF91C00CAC5DC /* UsersView.swift in Sources */,
 				590D6823257D3A830084D9DB /* String+dates.swift in Sources */,
 				596678B9257C0F2D0053F6A7 /* API.swift in Sources */,
 			);

@@ -122,3 +122,101 @@ public final class SpaceXHistoryQuery: GraphQLQuery {
     }
   }
 }
+
+public final class SpaceXUsersSubscription: GraphQLSubscription {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    subscription SpaceXUsers {
+      users {
+        __typename
+        id
+        name
+      }
+    }
+    """
+
+  public let operationName: String = "SpaceXUsers"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Subscription"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("users", type: .nonNull(.list(.nonNull(.object(User.selections))))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(users: [User]) {
+      self.init(unsafeResultMap: ["__typename": "Subscription", "users": users.map { (value: User) -> ResultMap in value.resultMap }])
+    }
+
+    /// fetch data from the table: "users"
+    public var users: [User] {
+      get {
+        return (resultMap["users"] as! [ResultMap]).map { (value: ResultMap) -> User in User(unsafeResultMap: value) }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: User) -> ResultMap in value.resultMap }, forKey: "users")
+      }
+    }
+
+    public struct User: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["users"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(String.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: String, name: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "users", "id": id, "name": name])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: String {
+        get {
+          return resultMap["id"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return resultMap["name"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+    }
+  }
+}

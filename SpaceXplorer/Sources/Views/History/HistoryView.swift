@@ -15,7 +15,7 @@ struct HistoryView: View {
     var body: some View {
         ZStack {
             NavigationView {
-                ScrollView(showsIndicators: false) {
+                ScrollView(showsIndicators: false   ) {
                     Color.clear.padding(.bottom, 15)
                     
                     LazyVStack(spacing: 12) {
